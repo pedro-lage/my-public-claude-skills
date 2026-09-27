@@ -1,0 +1,7 @@
+{
+  "name": "my-public-claude-skills",
+  "description": "Reusable Claude Code skills, agents and commands: multi-agent project management with a git-backed task board, and more over time.",
+  "version": "0.1.0",
+  "license": "MIT",
+  "repository": "https://github.com/pedro-lage/my-public-claude-skills"
+}

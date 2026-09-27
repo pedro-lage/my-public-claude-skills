@@ -1,0 +1,11 @@
+{
+  "name": "my-public-claude-skills",
+  "owner": { "name": "pedro-lage" },
+  "plugins": [
+    {
+      "name": "my-public-claude-skills",
+      "source": "./",
+      "description": "Reusable Claude Code skills, agents and commands."
+    }
+  ]
+}
