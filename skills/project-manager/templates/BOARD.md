@@ -11,7 +11,7 @@ Model assignment, the only rule for who may claim a card. A tag is one model key
 | Tag | Who may execute |
 |---|---|
 | `fable` | Only Claude Code running Claude Fable. |
-| `opus` | Only Claude Code running Claude Opus. |
+| `opus` | Only Claude Code running the newest Claude Opus (cheap cards set `Effort: medium` in their header). |
 | `sonnet` | Only Claude Code running Claude Sonnet. |
 | `local` | Only {{OWNER}}'s local model. |
 | `opus-or-local` | Either Claude Opus or the local model, whichever is free. |

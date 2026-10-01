@@ -81,7 +81,7 @@ MODELS: dict[str, str] = {
 EFFORTS: dict[str, str] = {
     # one entry per key of MODELS; the most expensive model only ever holds hard cards.
     "fable": "high",
-    "opus": "medium",
+    "opus": "high",       # cheap cards set `Effort: medium` in their header
     "sonnet": "medium",
 }
 EFFORT_LEVELS = ("low", "medium", "high", "xhigh", "max")

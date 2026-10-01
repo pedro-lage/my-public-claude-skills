@@ -37,7 +37,8 @@ Heuristic, from most to least expensive:
 | Give to | Cards where |
 |---|---|
 | The most capable model only (`fable`) | Judgment cannot be specified away: research that produces the spec (tax rules, strategy definition), the core algorithm whose objective is underdetermined (optimizer objective), anything where a subtly wrong answer is expensive and no test would catch it. |
-| The strong general model (`opus`) | Integration across many modules (a backtest engine over ledger, taxes and costs), numerically delicate code (estimators, shrinkage), long specs that are precise but dense, cards whose acceptance test is only meaningful if the design is right. |
+| The general model at high effort (`opus`, the default effort) | Integration across many modules (a backtest engine over ledger, taxes and costs), numerically delicate code (estimators, shrinkage), diagnosis with numbers to lean on, long specs that are precise but dense, cards whose acceptance test is only meaningful if the design is right. |
+| The general model at medium effort (`opus` with `Effort: medium` in the card header) | UI wiring, data tables, tests, docs, batch scripts, running a build cycle and reporting it: precise specs that need care, not depth. |
 | Either a mid model or the local model (`opus-or-local`, `sonnet-or-local`) | Adapters with a fixed interface, CLIs, notebooks, screens with a precise spec, fixtures, docs, glue between done modules. Whichever is free takes it. |
 | The local model only (`local`), or `sonnet` when there is none | Skeleton, config plumbing, one-source adapters with a sample response in the fixtures, mechanical refactors with a test that already exists. |
 
@@ -48,6 +49,7 @@ Rules:
 - If a downgraded card comes back blocked with questions that a precise spec would have answered, fix the card, not the tag.
 - Checkpoint reviews read `git diff --stat` and the diffs of source paths only; generated assets and data are marked `-diff` in `.gitattributes` so no agent can pull them into its context by accident.
 - Checkpoint cards go to the strong general model (`opus`), or `fable` where the checkpoint is itself a re-plan. Besides the deliverable the owner reviews, a checkpoint reviews the phase's merges for architectural fit and compatibility and opens at most three fix cards (cheapest capable tag, slotted before the next phase); a fix card never re-opens a delivered card's scope, and a phase of five cards must not produce six fixes.
+- `opus` is Claude Code's `opus` alias, i.e. the newest Opus (Claude Opus 5.5 as of October 2026). Keep one Opus tier and vary the effort per card: the newest Opus costs less per token than the one before it (Opus 5.5: $4/$20 per MTok, cache reads $0.20; Opus 5: $5/$25, $0.50), so an older Opus is never the cheap option.
 - Re-tag only `todo` cards, by hand, in a `Board: retag ...` commit by the owner.
 
 ## 4. Put the cards on the board
