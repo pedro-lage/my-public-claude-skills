@@ -8,7 +8,7 @@ projects these were developed on have been removed or replaced with `{{PLACEHOLD
 
 | Kind | Name | What it does |
 |---|---|---|
-| Skill | [`project-manager`](skills/project-manager/SKILL.md) | Plan and run a multi-agent software project on one repository: a git-backed task board, task cards with disjoint file ownership and explicit prerequisites, one card per agent context in a private git worktree, merged back through a board tool that enforces claims. Includes the board/start/finish/launch scripts (Python, standard library only) and the invoker prompt. |
+| Skill | [`project-manager`](skills/project-manager/SKILL.md) | Plan and run a multi-agent software project on one repository: a git-backed task board, task cards with disjoint file ownership and explicit prerequisites, one card per agent context in a private git worktree, merged back through a board tool that enforces claims, and an unattended board manager (`autospawn.py`) that launches, resumes and recovers cards. Includes the board/start/finish/launch/autospawn scripts (Python, standard library only), a context-size checkpoint hook, the card lint and merge gates, and the invoker prompt. |
 
 ## Repository layout
 

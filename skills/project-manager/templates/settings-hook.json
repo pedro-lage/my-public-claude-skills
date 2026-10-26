@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"$CLAUDE_PROJECT_DIR/plan/context_hook.py\"",
+            "timeout": 15
+          }
+        ]
+      }
+    ]
+  }
+}
